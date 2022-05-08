@@ -31,14 +31,29 @@ export default {
         document.querySelector("#exercise-details").showModal();
       });
     },
+    updateExercise() {
+      console.log(this.currentExercise),
+        axios.patch(`/exercises/${this.currentExercise.id}`, this.currentExercise).then((response) => {
+          console.log("Success!", response);
+          var index = this.exercises.indexOf(this.currentExercise);
+          this.exercises.splice(index, 1);
+          this.exercises.push(response.data);
+        });
+    },
+    deleteExercise(exercise) {
+      axios.delete(`/exercises/${exercise.id}`).then((response) => {
+        console.log(response);
+        var index = this.exercises.indexOf(exercise);
+        this.exercises.splice(index, 1);
+      });
+    },
   },
 };
 </script>
 
 <template>
   <div class="home">
-    <h1>{{ message }}</h1>
-    <!-- <h2 v-bind:class="className">{{ exercises }} count: {{ exercises.length }}</h2> -->
+    <h1 v-bind:class="className">{{ message }}</h1>
     <h2>Create New Exercise</h2>
     <p>
       Name:
@@ -56,6 +71,45 @@ export default {
       Image:
       <input type="text" v-model="newExercise.image" />
     </p>
+    <button v-on:click="createExercise()">Create</button>
+    <div v-for="exercise in exercises" v-bind:key="exercise.id">
+      <h3>{{ exercise.name }}</h3>
+      <p>{{ exercise.instructions }}</p>
+      <img v-bind:src="exercise.image" v-bind:alt="exercise.name" style="max-width: 250px" />
+      <div>
+        <button v-on:click="showExercise(exercise)">More Info</button>
+      </div>
+    </div>
+
+    <dialog id="exercise-details">
+      <form method="dialog">
+        <h1>Exercise Info</h1>
+        <p>Name: {{ currentExercise.name }}</p>
+        <p>Instructions: {{ currentExercise.instructions }}</p>
+        <p>Frequency: {{ currentExercise.frequency }}</p>
+        <p>Image Source: {{ currentExercise.image }}</p>
+        <h1>Edit Exercise</h1>
+        <p>
+          Name:
+          <input v-model="currentExercise.name" type="text" />
+        </p>
+        <p>
+          Instructions:
+          <input v-model="currentExercise.instructions" type="text" />
+        </p>
+        <p>
+          Frequency:
+          <input v-model="currentExercise.frequency" type="text" />
+        </p>
+        <p>
+          Image:
+          <input v-model="currentExercise.image" type="text" />
+        </p>
+        <button v-on:click="updateExercise()">Update</button>
+        <button v-on:click="deleteExercise(currentExercise)">Delete</button>
+        <button>Close</button>
+      </form>
+    </dialog>
   </div>
 </template>
 
