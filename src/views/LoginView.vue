@@ -41,7 +41,7 @@ export default {
       </div>
       <div>
         <label>Password:</label>
-        <input type="password" v-model="newSessionParams.password" />
+        <input type="current_password" v-model="newSessionParams.password" />
       </div>
       <input type="submit" value="Submit" />
     </form>
