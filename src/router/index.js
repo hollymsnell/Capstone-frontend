@@ -5,6 +5,7 @@ import LoginView from "../views/LoginView.vue";
 import LogoutView from "../views/LogoutView.vue";
 import UserView from "../views/UserView.vue";
 import ExerciseProgramsView from "../views/ExerciseProgramsView.vue";
+import ProgramView from "../views/ProgramView.vue";
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
     path: "/exercise_programs",
     name: "exercise_programs",
     component: ExerciseProgramsView,
+  },
+  {
+    path: "/programs",
+    name: "programs",
+    component: ProgramView,
   },
 ];
 
