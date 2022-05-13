@@ -6,6 +6,7 @@ import LogoutView from "../views/LogoutView.vue";
 import UserView from "../views/UserView.vue";
 import ExerciseProgramsView from "../views/ExerciseProgramsView.vue";
 import ProgramView from "../views/ProgramView.vue";
+import ProgramShow from "../views/ProgramShow.vue";
 
 const routes = [
   {
@@ -42,6 +43,11 @@ const routes = [
     path: "/programs",
     name: "programs",
     component: ProgramView,
+  },
+  {
+    path: "/programs/:id",
+    name: "programs",
+    component: ProgramShow,
   },
 ];
 
