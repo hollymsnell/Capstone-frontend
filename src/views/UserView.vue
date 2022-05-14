@@ -42,8 +42,15 @@ export default {
       <form method="dialog">
         <h1>User Info</h1>
         <p>Name: {{ currentUser.name }}</p>
-        <router-link v-bind:to="`/programs/${currentUser.id}`">Programs</router-link>
-        <button>Close</button>
+        <div>
+          <router-link v-bind:to="`/programs/${currentUser.id}`">Programs</router-link>
+        </div>
+        <div>
+          <router-link v-bind:to="`/exercise_programs/${currentUser.id}`">New Program</router-link>
+        </div>
+        <div>
+          <button>Close</button>
+        </div>
         <!-- <p>Instructions: {{ currentExercise.instructions }}</p>
         <p>Frequency: {{ currentExercise.frequency }}</p>
         <p>Image Source: {{ currentExercise.image }}</p>

@@ -35,7 +35,7 @@ const routes = [
     component: UserView,
   },
   {
-    path: "/exercise_programs",
+    path: "/exercise_programs/:id",
     name: "exercise_programs",
     component: ExerciseProgramsView,
   },
