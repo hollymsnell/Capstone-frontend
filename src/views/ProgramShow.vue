@@ -8,6 +8,7 @@ export default {
       currentProgram: {},
       newProgram: {},
       isClicked: false,
+      currentUser: {},
     };
   },
   created: function () {
@@ -21,22 +22,30 @@ export default {
       axios.get(`/programs/${this.$route.params.id}`).then((response) => {
         this.programs = response.data;
         console.log(response.data);
+        this.findUser(this.programs[0].user_id);
         // document.querySelector("#program-details").showModal();
       });
     },
-    updateProgram(id) {
-      console.log(id),
-        axios.patch(`/programs/${id}}`, this.currentProgram).then((response) => {
-          console.log("Success!", response);
-          // var index = this.programs.indexOf(this.currentProgram);
-          // this.programs.splice(index, 1);
-          // this.programs.push(response.data);
-        });
+    updateProgram(program) {
+      axios.patch(`/programs/${program.id}}`, program).then((response) => {
+        console.log("Success!", response);
+        // var index = this.programs.indexOf(this.currentProgram);
+        // this.programs.splice(index, 1);
+        // this.programs.push(response.data);
+      });
     },
-    destroyProgram() {
-      axios.delete(`/programs/${this.program.id}`).then((response) => {
+    destroyProgram(program) {
+      axios.delete(`/programs/${program.id}`).then((response) => {
         console.log(response);
-        this.$router.push("/programs");
+        var index = this.programs.indexOf(program);
+        this.programs.splice(index, 1);
+        // this.$router.push("/programs");
+      });
+    },
+    findUser(id) {
+      axios.get(`/users/${id}`).then((response) => {
+        this.currentUser = response.data;
+        console.log("AHHH!!", this.currentUser);
       });
     },
   },
@@ -45,15 +54,21 @@ export default {
 
 <template>
   <div class="home">
+    <h3>{{ currentUser.name }}</h3>
     <div v-for="program in programs" v-bind:key="program.id">
       <h2>{{ program.title }}</h2>
-      <p>Patient Rating:{{ program.user_rating }}</p>
-      <button v-on:click="clicked()">Change Rating</button>
+      <!-- <p>Patient Rating:{{ program.user_rating }}</p>
+      <button v-on:click="clicked()">Change Rating</button> -->
+      <form v-on:submit="updateProgram(program)">
+        <label for="programs">Change Rating:</label>
 
-      <form v-if="this.isClicked === true" v-on:submit="updateProgram(program.id)">
-        <p>
-          <input v-model="currentProgram.user_rating" type="text" />
-        </p>
+        <select name="program" id="programs" v-model="program.user_rating">
+          <option value="easy">Easy</option>
+          <option value="moderate">Moderate</option>
+          <option value="hard">Hard</option>
+          <option value="unable">Unable to Perform</option>
+        </select>
+
         <p>
           <input type="submit" value="Update" />
           <!-- <button v-on:click="updateProgram(program.id)">Update Rating</button> -->
