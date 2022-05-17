@@ -24,6 +24,14 @@ export default {
         document.querySelector("#user-details").showModal();
       });
     },
+    textRemind(user) {
+      var phone = {
+        phone: user.phone,
+      };
+      axios.post("/textremind", phone).then((response) => {
+        console.log(response);
+      });
+    },
   },
 };
 </script>
@@ -36,6 +44,9 @@ export default {
     <h3>{{ user.name }}</h3>
     <div>
       <button v-on:click="showUser(user.id)">Patient Info</button>
+    </div>
+    <div>
+      <button v-on:click="textRemind(user)">Send Reminder</button>
     </div>
 
     <dialog id="user-details">
