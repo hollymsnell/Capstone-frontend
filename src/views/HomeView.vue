@@ -3,7 +3,6 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "TherapE",
       exercises: [],
       className: "red",
       newExercise: {},
@@ -53,7 +52,7 @@ export default {
 
 <template>
   <div class="home">
-    <h1 v-bind:class="className">{{ message }}</h1>
+    <h1>TherapE</h1>
     <h2>Create New Exercise</h2>
     <p>
       Name:
@@ -71,13 +70,13 @@ export default {
       Image:
       <input type="text" v-model="newExercise.image" />
     </p>
-    <button v-on:click="createExercise()">Create</button>
+    <button class="btn btn-primary" v-on:click="createExercise()">Create</button>
     <div v-for="exercise in exercises" v-bind:key="exercise.id">
       <h3>{{ exercise.name }}</h3>
       <p>{{ exercise.instructions }}</p>
       <img v-bind:src="exercise.image" v-bind:alt="exercise.name" style="max-width: 250px" />
       <div>
-        <button v-on:click="showExercise(exercise)">More Info</button>
+        <button class="btn btn-info" v-on:click="showExercise(exercise)">More Info</button>
       </div>
     </div>
 
@@ -105,9 +104,9 @@ export default {
           Image:
           <input v-model="currentExercise.image" type="text" />
         </p>
-        <button v-on:click="updateExercise()">Update</button>
-        <button v-on:click="deleteExercise(currentExercise)">Delete</button>
-        <button>Close</button>
+        <button class="btn btn-success" v-on:click="updateExercise()">Update</button>
+        <button class="btn btn-danger" v-on:click="deleteExercise(currentExercise)">Delete</button>
+        <button class="btn btn-dark">Close</button>
       </form>
     </dialog>
   </div>

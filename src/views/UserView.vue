@@ -43,10 +43,10 @@ export default {
   <div v-for="user in users" v-bind:key="user.id">
     <h3>{{ user.name }}</h3>
     <div>
-      <button v-on:click="showUser(user.id)">Patient Info</button>
+      <button class="btn btn-info" v-on:click="showUser(user.id)">Patient Info</button>
     </div>
     <div>
-      <button v-on:click="textRemind(user)">Send Reminder</button>
+      <button class="btn btn-success" v-on:click="textRemind(user)">Send Reminder</button>
     </div>
 
     <dialog id="user-details">

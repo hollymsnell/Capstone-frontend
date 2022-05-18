@@ -76,11 +76,11 @@ export default {
       <p>{{ exercise.instructions }}</p>
       <img v-bind:src="exercise.image" v-bind:alt="exercise.name" style="max-width: 250px" />
       <div>
-        <button v-on:click.prevent="exercisePrograms.push(exercise)">Add to Program</button>
+        <button class="btn btn-warning" v-on:click.prevent="exercisePrograms.push(exercise)">Add to Program</button>
       </div>
     </div>
   </form>
-  <button v-on:click="createProgram()">Create</button>
+  <button class="btn btn-success" v-on:click="createProgram()">Create</button>
 </template>
 
 <style></style>

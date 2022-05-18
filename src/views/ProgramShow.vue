@@ -82,7 +82,7 @@ export default {
       </div>
 
       <p>
-        <button v-on:click="destroyProgram(program)">Delete Program</button>
+        <button class="btn btn-danger" v-on:click="destroyProgram(program)">Delete Program</button>
       </p>
     </div>
     <div>
