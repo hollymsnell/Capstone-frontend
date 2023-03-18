@@ -71,12 +71,26 @@ export default {
       <input type="text" v-model="newExercise.image" />
     </p> -->
     <!-- <button class="btn btn-primary" v-on:click="createExercise()">Create</button> -->
-    <div v-for="exercise in exercises" v-bind:key="exercise.id">
-      <h3>{{ exercise.name }}</h3>
-      <p>{{ exercise.instructions }}</p>
-      <img v-bind:src="exercise.image" v-bind:alt="exercise.name" style="max-width: 250px" />
-      <div>
-        <button class="btn btn-info" v-on:click="showExercise(exercise)">More Info</button>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <div class="card" style="width: 18rem">
+            <div v-for="exercise in exercises" v-bind:key="exercise.id">
+              <img
+                class="card-img-top"
+                v-bind:src="exercise.image"
+                v-bind:alt="exercise.name"
+                style="max-width: 250px"
+              />
+              <h3 class="card-title">{{ exercise.name }}</h3>
+              <p class="card-text">{{ exercise.instructions }}</p>
+
+              <div>
+                <button class="btn btn-info" v-on:click="showExercise(exercise)">More Info</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
