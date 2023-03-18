@@ -7,6 +7,7 @@ import UserView from "../views/UserView.vue";
 import ExerciseProgramsView from "../views/ExerciseProgramsView.vue";
 import ProgramView from "../views/ProgramView.vue";
 import ProgramShow from "../views/ProgramShow.vue";
+import CreateExerciseView from "../views/CreateExerciseView.vue";
 
 const routes = [
   {
@@ -48,6 +49,11 @@ const routes = [
     path: "/programs/:id",
     name: "programs",
     component: ProgramShow,
+  },
+  {
+    path: "/add",
+    name: "add",
+    component: CreateExerciseView,
   },
 ];
 

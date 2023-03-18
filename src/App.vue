@@ -22,6 +22,9 @@
             <a class="nav-link" href="/users">My Patients</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="/add">Add</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/login">Login</a>
           </li>
           <li class="nav-item">
