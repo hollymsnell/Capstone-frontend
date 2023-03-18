@@ -53,7 +53,7 @@ export default {
 <template>
   <div class="home">
     <h1>TherapE</h1>
-    <h2>Create New Exercise</h2>
+    <!-- <h2>Create New Exercise</h2>
     <p>
       Name:
       <input type="text" v-model="newExercise.name" />
@@ -69,8 +69,8 @@ export default {
     <p>
       Image:
       <input type="text" v-model="newExercise.image" />
-    </p>
-    <button class="btn btn-primary" v-on:click="createExercise()">Create</button>
+    </p> -->
+    <!-- <button class="btn btn-primary" v-on:click="createExercise()">Create</button> -->
     <div v-for="exercise in exercises" v-bind:key="exercise.id">
       <h3>{{ exercise.name }}</h3>
       <p>{{ exercise.instructions }}</p>
