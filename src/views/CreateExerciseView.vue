@@ -13,7 +13,7 @@ export default {
   methods: {
     submit: function () {
       axios
-        .post("/add", this.newExercise)
+        .post("/exercises", this.newExercise)
         .then((response) => {
           console.log(response.data);
           this.$router.push("/home");

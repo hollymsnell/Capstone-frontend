@@ -31,7 +31,7 @@ export default {
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
-      <div>
+      <div class="form-group">
         <label>Name:</label>
         <input type="text" v-model="newUserParams.name" />
       </div>
