@@ -42,16 +42,14 @@ export default {
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-sm">
+      <div class="col-sm" v-for="user in users" v-bind:key="user.id">
         <div class="card" style="width: 18rem">
-          <div v-for="user in users" v-bind:key="user.id">
-            <h3>{{ user.name }}</h3>
-            <div>
-              <button class="btn btn-info" v-on:click="showUser(user.id)">Patient Info</button>
-            </div>
-            <div>
-              <button class="btn btn-success" v-on:click="textRemind(user)">Send Reminder</button>
-            </div>
+          <h3>{{ user.name }}</h3>
+          <div>
+            <button class="btn btn-info" v-on:click="showUser(user.id)">Patient Info</button>
+          </div>
+          <div>
+            <button class="btn btn-success" v-on:click="textRemind(user)">Send Reminder</button>
           </div>
         </div>
       </div>

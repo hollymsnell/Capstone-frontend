@@ -77,7 +77,6 @@ export default {
           <div class="card" style="width: 18rem">
             <img class="card-img-top" v-bind:src="exercise.image" v-bind:alt="exercise.name" style="max-width: 250px" />
             <h3 class="card-title">{{ exercise.name }}</h3>
-            <!-- <p class="card-text">{{ exercise.instructions }}</p> -->
 
             <div>
               <button class="btn btn-info" v-on:click="showExercise(exercise)">More Info</button>
@@ -93,7 +92,7 @@ export default {
         <p>Name: {{ currentExercise.name }}</p>
         <p>Instructions: {{ currentExercise.instructions }}</p>
         <p>Frequency: {{ currentExercise.frequency }}</p>
-        <!-- <p>Image Source: {{ currentExercise.image }}</p> -->
+
         <h1>Edit Exercise</h1>
         <p>
           Name:
