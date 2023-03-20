@@ -57,6 +57,7 @@ export default {
   <div class="home">
     <h1>{{ message }}</h1>
   </div>
+  <p>##patient's name here##</p>
   <form>
     Program Title:
     <input type="text" v-model="newProgram.title" />
