@@ -31,21 +31,40 @@ export default {
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
-      <div class="form-group">
-        <label>Name:</label>
-        <input type="text" v-model="newUserParams.name" />
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>Name:</label>
+          <input type="text" class="form-control" v-model="newUserParams.name" placeholder="Name" />
+        </div>
+        <div class="form-group col-md-6">
+          <label>Age:</label>
+          <input type="integer" class="form-control" v-model="newUserParams.age" placeholder="Age" />
+        </div>
       </div>
-      <div>
-        <label>Email:</label>
-        <input type="email" v-model="newUserParams.email" />
-      </div>
-      <div>
-        <label>Password:</label>
-        <input type="password" v-model="newUserParams.password" />
-      </div>
-      <div>
-        <label>Password confirmation:</label>
-        <input type="password" v-model="newUserParams.password_confirmation" />
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>Email:</label>
+          <input type="email" class="form-control" id="inputEmail4" v-model="newUserParams.email" placeholder="Email" />
+        </div>
+        <div class="form-group col-md-6">
+          <label>Password:</label>
+          <input
+            type="password"
+            class="form-control"
+            id="inputPassword4"
+            v-model="newUserParams.password"
+            placeholder="Password"
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label>Password confirmation:</label>
+          <input
+            type="password"
+            class="form-control"
+            v-model="newUserParams.password_confirmation"
+            placeholder="Password Confirmation"
+          />
+        </div>
       </div>
       <input type="submit" value="Submit" />
     </form>
