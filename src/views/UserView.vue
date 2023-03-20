@@ -59,6 +59,7 @@ export default {
       <form method="dialog">
         <h1>User Info</h1>
         <p>Name: {{ currentUser.name }}</p>
+        <p>Age: {{ currentUser.age }}</p>
         <div>
           <router-link v-bind:to="`/programs/${currentUser.id}`">Programs</router-link>
         </div>
