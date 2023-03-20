@@ -36,14 +36,34 @@ export default {
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
       <div>
-        <label>Email:</label>
-        <input type="email" v-model="newSessionParams.email" />
+        <label for="exampleInputEmail1">Email:</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          v-model="newSessionParams.email"
+          placeholder="Enter email"
+        />
       </div>
       <div>
         <label>Password:</label>
-        <input type="current_password" v-model="newSessionParams.password" />
+        <input
+          type="current_password"
+          class="form-control"
+          id="exampleInputPassword1"
+          v-model="newSessionParams.password"
+          placeholder="Password"
+        />
       </div>
       <input type="submit" value="Submit" />
     </form>
   </div>
 </template>
+
+<style>
+.login {
+  width: 500px;
+  margin-left: 50px;
+}
+</style>

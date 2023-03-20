@@ -73,4 +73,8 @@ nav a {
 nav a.router-link-exact-active {
   color: #42b983;
 }
+
+.container-fluid {
+  background-color: #84ceeb;
+}
 </style>

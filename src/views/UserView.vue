@@ -46,7 +46,7 @@ export default {
         <div class="card" style="width: 18rem">
           <h3>{{ user.name }}</h3>
           <div>
-            <button class="btn btn-info" v-on:click="showUser(user.id)">Patient Info</button>
+            <button class="button" v-on:click="showUser(user.id)">Patient Info</button>
           </div>
           <div>
             <button class="btn btn-success" v-on:click="textRemind(user)">Send Reminder</button>
@@ -97,7 +97,12 @@ export default {
   </div>
 </template>
 
-<style></style>
+<style>
+.button {
+  background-color: #8860d0;
+}
+</style>
+
 -->
 
 <!-- <div v-for="program in user.programs" v-bind:key="program.id"></div> -->
