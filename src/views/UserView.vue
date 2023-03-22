@@ -45,6 +45,7 @@ export default {
     <div class="row">
       <div class="col-sm" v-for="user in users" v-bind:key="user.id">
         <div class="card" style="width: 18rem">
+          <img class="card-img-top" v-bind:src="user.profile_pic" v-bind:alt="user.name" style="max-width: 250px" />
           <h3>{{ user.name }}</h3>
           <div>
             <button class="button" v-on:click="showUser(user.id)">Patient Info</button>
@@ -59,8 +60,11 @@ export default {
     <dialog id="user-details">
       <form method="dialog">
         <h1>User Info</h1>
+        <p>{{ currentUser.profile_pic }}</p>
         <p>Name: {{ currentUser.name }}</p>
         <p>Age: {{ currentUser.age }}</p>
+        <p>Injury Diagnosis: {{ currentUser.injury_diagnosis }}</p>
+        <p>Phone: {{ currentUser.phone }}</p>
         <div>
           <router-link v-bind:to="`/programs/${currentUser.id}`">Programs</router-link>
         </div>

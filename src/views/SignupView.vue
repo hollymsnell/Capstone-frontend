@@ -65,6 +65,10 @@ export default {
             placeholder="Password Confirmation"
           />
         </div>
+        <div class="form-group col-md-6">
+          <label>Profile Picture:</label>
+          <input type="text" class="form-control" v-model="newUserParams.profile_pic" placeholder="Profile Pic" />
+        </div>
       </div>
       <input type="submit" value="Submit" />
     </form>
