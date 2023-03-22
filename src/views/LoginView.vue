@@ -49,7 +49,7 @@ export default {
       <div>
         <label>Password:</label>
         <input
-          type="current_password"
+          type="password"
           class="form-control"
           id="exampleInputPassword1"
           v-model="newSessionParams.password"

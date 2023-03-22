@@ -53,7 +53,7 @@ export default {
 <template>
   <div class="home">
     <h1>TherapE</h1>
-    <p>##search bar here##</p>
+    <p>###search bar here##</p>
     <!-- <h2>Create New Exercise</h2>
     <p>
       Name:

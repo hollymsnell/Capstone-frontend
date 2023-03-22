@@ -33,21 +33,22 @@ export default {
 
 <template>
   <div class="add">
+    <!-- <form v-on:submit.prevent="submit()" -->
     <h1>Create New Exercise</h1>
     <p>
-      Name:
+      <label>Name:</label>
       <input type="text" v-model="newExercise.name" />
     </p>
     <p>
-      Instructions:
+      <label>Instructions:</label>
       <input type="text" v-model="newExercise.instructions" />
     </p>
     <p>
-      Frequency:
+      <label>Frequency:</label>
       <input type="text" v-model="newExercise.frequency" />
     </p>
     <p>
-      Image:
+      <label>Image:</label>
       <input type="text" v-model="newExercise.image" />
     </p>
     <button class="btn btn-primary" v-on:click="createExercise()">Create</button>
@@ -56,6 +57,7 @@ export default {
       <p>{{ exercise.instructions }}</p>
       <img v-bind:src="exercise.image" v-bind:alt="exercise.name" style="max-width: 250px" />
     </div>
+    <!-- </form> -->
   </div>
 </template>
 

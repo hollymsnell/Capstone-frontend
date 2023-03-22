@@ -60,7 +60,6 @@ export default {
     <dialog id="user-details">
       <form method="dialog">
         <h1>User Info</h1>
-        <p>{{ currentUser.profile_pic }}</p>
         <p>Name: {{ currentUser.name }}</p>
         <p>Age: {{ currentUser.age }}</p>
         <p>Injury Diagnosis: {{ currentUser.injury_diagnosis }}</p>
