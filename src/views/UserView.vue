@@ -15,6 +15,7 @@ export default {
       axios.get("/users").then((response) => {
         console.log("users index", response.data);
         this.users = response.data;
+        console.log(this.users);
       });
     },
 
