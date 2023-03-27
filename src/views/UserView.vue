@@ -25,6 +25,22 @@ export default {
         document.querySelector("#user-details").showModal();
       });
     },
+    updateUser() {
+      console.log(this.currentUser),
+        axios.patch(`/users/${this.currentUser.id}`, this.currentUser).then((response) => {
+          console.log("Success!", response);
+          var index = this.users.indexOf(this.currentUser);
+          this.users.splice(index, 1);
+          this.users.push(response.data);
+        });
+    },
+    deleteuser(user) {
+      axios.delete(`/users/${user.id}`).then((response) => {
+        console.log(response);
+        var index = this.users.indexOf(user);
+        this.users.splice(index, 1);
+      });
+    },
     textRemind(user) {
       var phone = {
         phone: user.phone,
