@@ -62,7 +62,7 @@ export default {
       <div class="col-sm" v-for="user in users" v-bind:key="user.id">
         <div class="card" style="width: 18rem">
           <img class="card-img-top" v-bind:src="user.profile_pic" v-bind:alt="user.name" style="max-width: 250px" />
-          <h3>{{ user.name }}</h3>
+          <h3 class="card-title">{{ user.name }}</h3>
           <div>
             <button class="button" v-on:click="showUser(user.id)">Patient Info</button>
           </div>
@@ -78,6 +78,7 @@ export default {
       <form method="dialog">
         <h1>User Info</h1>
         <p>Name: {{ currentUser.name }}</p>
+        <p>Email: {{ currentUser.email }}</p>
         <p>Age: {{ currentUser.age }}</p>
         <p>Injury Diagnosis: {{ currentUser.injury_diagnosis }}</p>
         <p>Phone: {{ currentUser.phone }}</p>
@@ -108,10 +109,10 @@ export default {
           Profile Picture:
           <input v-model="currentUser.profile_pic" type="text" />
         </p>
-        <button class="btn btn-success" v-on:click="updateUser()">Update Info</button>
+        <button class="btn btn-success" v-on:click="updateUser(currentUser)">Update Info</button>
         <button class="btn btn-danger" v-on:click="deleteUser(currentUser)">Delete Patient</button>
         <div>
-          <button>Close</button>
+          <button class="btn btn-dark">Close</button>
         </div>
         <!-- <p>Instructions: {{ currentExercise.instructions }}</p>
         <p>Frequency: {{ currentExercise.frequency }}</p>
