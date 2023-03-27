@@ -66,6 +66,7 @@ export default {
           <div>
             <button class="button" v-on:click="showUser(user.id)">Patient Info</button>
           </div>
+
           <div>
             <button class="btn btn-success" v-on:click="textRemind(user)">Send Reminder</button>
           </div>
@@ -86,6 +87,29 @@ export default {
         <div>
           <router-link v-bind:to="`/exercise_programs/${currentUser.id}`">New Program</router-link>
         </div>
+        <h1>Edit Patient Info</h1>
+        <p>
+          Name:
+          <input v-model="currentUser.name" type="text" />
+        </p>
+        <p>
+          Age:
+          <input v-model="currentUser.age" type="text" />
+        </p>
+        <p>
+          Injury Diagnosis:
+          <input v-model="currentUser.injury_diagnosis" type="text" />
+        </p>
+        <p>
+          Phone:
+          <input v-model="currentUser.phone" type="text" />
+        </p>
+        <p>
+          Profile Picture:
+          <input v-model="currentUser.profile_pic" type="text" />
+        </p>
+        <button class="btn btn-success" v-on:click="updateUser()">Update Info</button>
+        <button class="btn btn-danger" v-on:click="deleteUser(currentUser)">Delete Patient</button>
         <div>
           <button>Close</button>
         </div>
