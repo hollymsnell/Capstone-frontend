@@ -70,9 +70,9 @@ export default {
     v-model="searchText"
   />
   <div v-for="exercise in filterExercises()" v-bind:key="exercise.id">
-    <h3>{{ exercise.name }}</h3>
+    <!-- <h3>{{ exercise.name }}</h3>
     <p>{{ exercise.instructions }}</p>
-    <img v-bind:src="exercise.image" v-bind:alt="exercise.name" style="max-width: 250px" />
+    <img v-bind:src="exercise.image" v-bind:alt="exercise.name" style="max-width: 250px" /> -->
   </div>
   <!-- <h2>Create New Exercise</h2>
     <p>
@@ -142,5 +142,8 @@ export default {
 .card {
   background-color: #8860d0;
   padding: 30px;
+}
+.col-sm {
+  margin: 35px;
 }
 </style>
