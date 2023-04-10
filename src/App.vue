@@ -1,6 +1,6 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg bg-light p-0">
+    <div class="container-fluid p-2">
       <a class="navbar-brand" href="/">TherapE</a>
       <button
         class="navbar-toggler"
@@ -59,6 +59,8 @@
   text-align: center;
   color: #2c3e50;
   background-color: #c1c8e4;
+  min-height: 100vh;
+  height: 100%;
 }
 
 nav {
@@ -77,6 +79,6 @@ nav a.router-link-exact-active {
 .container-fluid {
   background-color: #84ceeb;
   border: 1px solid rgb(182, 177, 177);
-  margin: -8px;
+  /* margin: -8px; */
 }
 </style>

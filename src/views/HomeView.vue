@@ -94,7 +94,7 @@ export default {
   <!-- <button class="btn btn-primary" v-on:click="createExercise()">Create</button> -->
   <div class="container">
     <div class="row">
-      <div class="col-sm" v-for="exercise in exercises" v-bind:key="exercise.id">
+      <div class="col-sm" v-for="exercise in filterExercises()" v-bind:key="exercise.id">
         <div class="card h-100" style="width: 18rem">
           <img class="card-img-top" v-bind:src="exercise.image" v-bind:alt="exercise.name" style="max-width: 250px" />
           <h3 class="card-title">{{ exercise.name }}</h3>

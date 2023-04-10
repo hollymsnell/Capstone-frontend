@@ -31,7 +31,7 @@ export default {
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
-      <div class="form-row">
+      <div class="form row">
         <div class="form-group col-md-6">
           <label>Name:</label>
           <input type="text" class="form-control" v-model="newUserParams.name" placeholder="Name" />
@@ -41,7 +41,7 @@ export default {
           <input type="integer" class="form-control" v-model="newUserParams.age" placeholder="Age" />
         </div>
       </div>
-      <div class="form-row">
+      <div class="form row">
         <div class="form-group col-md-6">
           <label>Email:</label>
           <input type="email" class="form-control" id="inputEmail4" v-model="newUserParams.email" placeholder="Email" />
@@ -74,3 +74,11 @@ export default {
     </form>
   </div>
 </template>
+
+<style>
+.signup {
+  padding: 100px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+</style>
